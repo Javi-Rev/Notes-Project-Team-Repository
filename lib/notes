@@ -16,7 +16,7 @@ Access an element in an array by its index    ["a","b","c"][0] # => "a"
 Find out how big the array is    ["a","b"].length # => 2'  # => "Add 1 to 2    1 + 2  # => 3\nSubtract 5 from 2    2 - 5  # => -3\nIs 1 less than 2    1 < 2  # => true\nIs 1 equal to 2    1 == 2 # => 3\nIs 1 greater than 2    1 > 2  # => 3\nIs 1 less than or equal to 2    1 <= 2 # => 3\nIs 1 greater than or equal to 2    1 >= 2 # => 3\nConvert 1 to a float    1.to_f # => 3\nConcatenate two arrays    [1,2] + [2, 3]   # => [1, 2, 2, 3]\nRemove elements in second array from first    [1,2,4] - [2...
 
 if thing_to_find
-  found_thing = notes.scan /.*#{thing_to_find}.*/  # => nil
+  found_thing = notes.scan /.*#{thing_to_find}.*/i  # => nil
   puts found_thing
 else
   puts notes
