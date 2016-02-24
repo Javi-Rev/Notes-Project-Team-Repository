@@ -22,7 +22,13 @@ class NotesTest < Minitest::Test
     argument = "Add"
 
     stdout, stderr, exitstatus = Open3.capture3("notes", argument)
-    #assert_equal test_string, stdout
+    assert_equal "Add 1 to 2    1 + 2  # => 3" , stdout.strip!
+  end
+
+  def test_that_matching_is_case_insensitive
+    argument = "add" #lowercase does not match the generic example
+
+    stdout, stderr, exitstatus = Open3.capture3("notes", argument)
     assert_equal "Add 1 to 2    1 + 2  # => 3" , stdout.strip!
   end
 end
