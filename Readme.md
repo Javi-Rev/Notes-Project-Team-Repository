@@ -1,4 +1,4 @@
-Gitloc
+Notes
 ======
 
 This parses a notes file for sections related to input.
@@ -7,7 +7,7 @@ This parses a notes file for sections related to input.
 ----------------------------------------------------
 
 The MIT License (MIT)
-Copyright (c) 2016 Megan Nilles
+Copyright (c) 2016 Megan Nilles, James Wilton, Javi Revuelta
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files ("the Software"), to deal
