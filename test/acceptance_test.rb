@@ -7,7 +7,8 @@ require 'open3'
 
 class AcceptanceTest < Minitest::Test
   def test_acceptance_test
-    stdout, stderr, exitstatus = Open3.capture3("notes")
+    notes_program = File.expand_path('../../bin/notes', __FILE__)
+    stdout, stderr, exitstatus = Open3.capture3(notes_program)
     #assert_equal test_string, stdout
     assert_match /.*float.*1\.to_f/, stdout
   end

@@ -31,4 +31,10 @@ class NotesTest < Minitest::Test
     stdout, stderr, exitstatus = Open3.capture3("notes", argument)
     assert_equal "Add 1 to 2    1 + 2  # => 3" , stdout.strip!
   end
+
+  def test_treats_multiple_arguments_as_successive_filters
+    argument = "1 less equal" #enters multiple arguments to test filter
+    stdout, stderr, exitstatus = Open3.capture3("notes", argument)
+    assert_equal "Is 1 less than or equal to 2    1 <= 2 # => 3" ,stdout
+  end
 end
