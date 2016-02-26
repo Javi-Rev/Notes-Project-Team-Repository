@@ -2,7 +2,7 @@
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
 require 'notes'
 
-thing_to_find = ARGV[0]  # => nil
+thing_to_find = ARGV  # => nil
 
 notes = 'Add 1 to 2    1 + 2  # => 3
 Subtract 5 from 2    2 - 5  # => -3
@@ -20,7 +20,6 @@ Find out how big the array is    ["a","b"].length # => 2'  # => "Add 1 to 2    1
 parse_data(notes)
 
 puts find_notes(notes, thing_to_find)
-
 
 
 

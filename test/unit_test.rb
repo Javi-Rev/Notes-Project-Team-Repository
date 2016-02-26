@@ -16,4 +16,11 @@ class NotesTest < Minitest::Test
     note = "I am a note => Here is my answer 33\nI am also a note => With an answer 2    3\n"
     assert_equal = ["I am a note => Here is my answer 33","I am also a note => With an answer 23"], parse_data(note)
   end
+
+  def test_to_see_if_h_argument_returns_help
+    help = "NO HELP FOR YOU"
+    notes = "whatever"
+    h=["-h"]
+    assert_equal help, find_notes(notes, h) 
+  end
 end
