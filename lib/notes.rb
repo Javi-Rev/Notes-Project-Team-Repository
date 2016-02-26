@@ -1,7 +1,7 @@
 def find_notes(notes, thing_to_find)
 
   if thing_to_find[0] == "-h"
-    help = "NO HELP FOR YOU"
+    help = "Purpose: searches notes files for specific keywords\nUsage: notes [:filter] [:fileter] [:ad nauseum]"
     help
   elsif thing_to_find
     found_thing = [] 
