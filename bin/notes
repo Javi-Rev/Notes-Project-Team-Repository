@@ -1,7 +1,9 @@
 #!/usr/bin/env ruby
+
+$LOAD_PATH.unshift File.expand_path("../../lib", __FILE__)
 require 'notes'
 
-thing_to_find = ARGV
+filters = ARGV
 
 notes = ['Add 1 to 2    1 + 2  # => 3',
 'Subtract 5 from 2    2 - 5  # => -3',
@@ -14,9 +16,12 @@ notes = ['Add 1 to 2    1 + 2  # => 3',
 'Concatenate two arrays    [1,2] + [2, 3]',
 'Remove elements in second array from first    [1,2,4] - [2, 3] # => [1,4]',
 'Access an element in an array by its index    ["a","b","c"][0]',
-'Find out how big the array is    ["a","b"].length # => 2'].reject!
+'Find out how big the array is    ["a","b"].length # => 2']
 
-puts find_notes(notes, thing_to_find)
-
-
-
+if filters && filters[0] == "-h"
+  puts "Purpose : Searches notes files for specific keywords\nUsage: notes [filters]"
+elsif filters
+  puts find_notes(notes, filters)
+else
+  puts notes
+end

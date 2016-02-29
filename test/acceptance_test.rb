@@ -10,6 +10,9 @@ class AcceptanceTest < Minitest::Test
     notes_program = File.expand_path('../../bin/notes', __FILE__)
     stdout, stderr, exitstatus = Open3.capture3(notes_program)
     assert_match /.*float.*1\.to_f/, stdout
+
+    stdout, stderr, exitstatus = Open3.capture3(notes_program, "-h")
+    assert_match /Purpose.*/, stdout
   end
 end
 
