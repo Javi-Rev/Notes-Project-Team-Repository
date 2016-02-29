@@ -6,7 +6,7 @@ def find_notes(notes, thing_to_find)
   elsif thing_to_find
     found_thing = []
     notes.each  do |arg|
-    found_thing << arg.scan(/.*#{thing_to_find}.*/i)
+    found_thing << arg.scan(/.*#{thing_to_find[0]}.*/i)
     end
 
     found_thing.join('\n')
@@ -15,6 +15,3 @@ def find_notes(notes, thing_to_find)
   end
 end
 
-def parse_data(notes)
-  notes.split('\n')
-end
