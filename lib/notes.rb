@@ -1,12 +1,12 @@
-def find_notes(notes, thing_to_find)
+def find_notes(notes, filters)
 
-  if thing_to_find[0] == "-h"
+  if filters[0] == "-h"
     help = "Purpose: searches notes files for specific keywords\nUsage: notes [:filter] [:fileter] [:ad nauseum]"
     help
-  elsif thing_to_find
+  elsif filters
     found_thing = []
     notes.each  do |arg|
-    found_thing << arg.scan(/.*#{thing_to_find[0]}.*/i)
+      found_thing << arg.scan(/.*#{filters[0]}.*/i)
     end
 
     found_thing.join('\n')
