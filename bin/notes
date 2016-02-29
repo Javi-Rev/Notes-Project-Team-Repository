@@ -3,7 +3,7 @@
 $LOAD_PATH.unshift File.expand_path("../../lib", __FILE__)
 require 'notes'
 
-filters = ARGV
+selectors = ARGV
 
 notes = ['Add 1 to 2    1 + 2  # => 3',
 'Subtract 5 from 2    2 - 5  # => -3',
@@ -18,10 +18,8 @@ notes = ['Add 1 to 2    1 + 2  # => 3',
 'Access an element in an array by its index    ["a","b","c"][0]',
 'Find out how big the array is    ["a","b"].length # => 2']
 
-if filters && filters[0] == "-h"
-  puts "Purpose : Searches notes files for specific keywords\nUsage: notes [filters]"
-elsif filters
-  puts find_notes(notes, filters)
+if selectors && selectors[0] == "-h"
+  puts "Purpose : Searches notes files for specific keywords\nUsage: notes [selectors]"
 else
-  puts notes
+  puts find_notes(notes, selectors)
 end
