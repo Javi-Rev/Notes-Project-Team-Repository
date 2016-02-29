@@ -15,6 +15,12 @@ class NotesTest < Minitest::Test
     assert_equal ["b"], find_notes(note, selectors)
   end
 
+  def test_no_selector_returns_all_notes
+    note = ["a", "b", "c"]
+    selectors = []
+    assert_equal ["a", "b", "c"], find_notes(note, selectors)
+  end
+
   def test_you_can_search_with_successive_filters
     note = ["a", "a & b", "a & b & c"]
     selectors = ["a", "b", "c"]
