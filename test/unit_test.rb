@@ -18,9 +18,9 @@ class NotesTest < Minitest::Test
   end
 
   def test_to_see_if_h_argument_returns_help
-    help = "NO HELP FOR YOU"
+    help = "Purpose: searches notes files for specific keywords\nUsage: notes [:filter] [:fileter] [:ad nauseum]"
     notes = "whatever"
     h=["-h"]
-    assert_equal help, find_notes(notes, h) 
+    assert_equal help, find_notes(notes, h)
   end
 end
