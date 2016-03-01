@@ -39,7 +39,10 @@ class NotesTest < Minitest::Test
   end
 
   def test_you_can_search_for_hidden_data
-    skip
+    note = [{"description" => "Add 1 to 2", "example" => "1 + 2 #=> 3", "other_searches" => "plus + sum"}]
+
+    selectors = ["plus"]
+    assert_equal [{"description" => "Add 1 to 2", "example" => "1 + 2 #=> 3", "other_searches" => "plus + sum"}], find_notes(note, selectors)
   end
 
 end
