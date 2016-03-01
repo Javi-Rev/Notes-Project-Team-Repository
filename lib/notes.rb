@@ -39,5 +39,4 @@ def find_notes(notes, selectors)
 
   selected.compact
 end
-
-
+ 

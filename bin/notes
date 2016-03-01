@@ -24,7 +24,7 @@ if selectors && selectors[0] == "-h"
   puts "Purpose : Searches notes files for specific keywords\nUsage: notes [selectors]"
 else
   find_notes(notes, selectors).each do |note|
-    printf "%-50s %-20s\n", "#{note["description"]}",  "#{note["example"]}"
+    printf "%-50s %-20s\n", "\e[33m#{note["description"]}\e[0m",  "\e[35m#{note["example"]}\e[0m"
   end
 end
 
