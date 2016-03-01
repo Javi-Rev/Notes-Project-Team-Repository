@@ -4,7 +4,9 @@ def find_notes(notes, selectors)
   selectors.each do |filter|
     final_filtered = []
     selected.each do |note|
-      final_filtered << note[/.*#{filter}.*/i]
+      if note["description"][/.*#{filter}.*/i]|| note["example"][/.*#{filter}.*/i]
+        final_filtered << note
+      end
     end
     selected = final_filtered.compact
   end
@@ -30,8 +32,6 @@ Dict = {
   "x" => "multiply",
   "list" => "array",
   "[]" => "array",
-  "boolean" => "true",
-  "boolean" => "false",
   "decimal" => "float",
   "decimals" => "float",
 }
