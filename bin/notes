@@ -20,10 +20,11 @@ notes = [
   { "description" => "Find out how big the array is",    "example" => "[\"a\",\"b\"].length # => 2"}
 ]
 
-  if selectors && selectors[0] == "-h"
-    puts "Purpose : Searches notes files for specific keywords\nUsage: notes [selectors]"
+if selectors && selectors[0] == "-h"
+  puts "Purpose : Searches notes files for specific keywords\nUsage: notes [selectors]"
 else
   find_notes(notes, selectors).each do |note|
-    puts "#{note["description"]}  #{note["example"]}"
+    printf "%-50s %-20s\n", "#{note["description"]}",  "#{note["example"]}"
   end
 end
+
